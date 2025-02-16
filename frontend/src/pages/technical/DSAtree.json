@@ -1,20 +1,33 @@
 {
-    "Array/String": {
-      "Two Pointers": "Use two pointers to traverse the array",
-      "Sliding Window": "Maintain a window and slide it through the array"
-    },
-    "Graph": {
-      "DFS": "Depth-First Search traversal",
-      "BFS": "Breadth-First Search traversal"
-    },
-    "Tree": {
-      "Inorder Traversal": "Left, Root, Right",
-      "Level Order Traversal": "Breadth-First Search for trees"
-    },
-    "Linked List": {
-      "Detecting cycles": "Fast and slow pointers",
-      "Reversing": "Use a \"Previous\" pointer",
-      "Modification": "Maintain original head using a \"temp\" head"
-    }
+  "Array/String": {
+      "Is the array sorted?": "Binary Search, Two Pointers",
+      "Is the array unsorted?": {
+          "Looking the number of ways/Max-Min of something?": {
+              "Decisions dependent": "Dynamic Programming",
+              "Decisions independent": "Greedy Algorithms"
+          },
+          "Checking if something is possible?": "Backtracking",
+          "String Manipulation?": {
+              "Prefix matching": "Trie",
+              "Building strings/Finding distances": "Stack, Monotonic Stack"
+          },
+          "Finding a specific element?": "Hash Map/Set",
+          "Elements added/removed in sliding window fashion?": "Sliding Window/Counting Hash Map",
+          "Continuously finding max element or removing them?": "Heap/Monotonic Queue"
+      }
+  },
+  "Graph": {
+      "Are we looking for the shortest path or fewest steps?": "Breadth-First Search (BFS)",
+      "Are we not looking for shortest path or fewest steps?": "Depth-First Search (DFS)"
+  },
+  "Tree (Probably Binary)": {
+      "Are there specific depths/levels?": "Breadth-First Search (BFS)",
+      "Are there not specific depths or levels?": "Depth-First Search (DFS)"
+  },
+  "Linked List": {
+      "Are we detecting cycles?": "Fast and slow pointers",
+      "Are we reversing the list?": "Use a \"Previous\" pointer",
+      "Are we modifying the list?": "Maintain original head using a \"temp\" pointer"
   }
-  
+
+}
