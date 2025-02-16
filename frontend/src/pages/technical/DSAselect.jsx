@@ -85,6 +85,8 @@ export default function DSAselect() {
         <div>
           <h3>Selected Approach:</h3>
           <p>{Array.isArray(currentLevel) ? currentLevel.join(', ') : currentLevel}</p>
+          {/* {videos[{index]} */}
+          <p>(See down below for more resources)</p>
         </div>
       )}
       <div style={{ marginTop: '20px' }}>
