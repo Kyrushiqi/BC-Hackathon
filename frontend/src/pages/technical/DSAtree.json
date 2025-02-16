@@ -1,0 +1,20 @@
+{
+    "Array/String": {
+      "Two Pointers": "Use two pointers to traverse the array",
+      "Sliding Window": "Maintain a window and slide it through the array"
+    },
+    "Graph": {
+      "DFS": "Depth-First Search traversal",
+      "BFS": "Breadth-First Search traversal"
+    },
+    "Tree": {
+      "Inorder Traversal": "Left, Root, Right",
+      "Level Order Traversal": "Breadth-First Search for trees"
+    },
+    "Linked List": {
+      "Detecting cycles": "Fast and slow pointers",
+      "Reversing": "Use a \"Previous\" pointer",
+      "Modification": "Maintain original head using a \"temp\" head"
+    }
+  }
+  
