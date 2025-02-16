@@ -1,4 +1,6 @@
-{
+{   "Array": {
+        
+    },
     "Linked List": {
         "Detecting cycles": "Fast and slow pointers",
         "Reversing": "Use a \"Previous\" pointer",
