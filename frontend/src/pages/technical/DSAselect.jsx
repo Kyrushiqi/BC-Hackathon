@@ -1,30 +1,42 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import List from '@mui/joy/List';
 import ListItem from '@mui/joy/ListItem';
-import ListItemDecorator from '@mui/joy/ListItemDecorator';
 import Radio from '@mui/joy/Radio';
 import RadioGroup from '@mui/joy/RadioGroup';
-// import Person from '@mui/icons-material/Person';
-// import People from '@mui/icons-material/People';
-// import Apartment from '@mui/icons-material/Apartment';
+import Button from '@mui/joy/Button';
+import dsaData from './DSAtree.json';
+
 
 export default function DSAselect() {
-  return (
-    <RadioGroup aria-label="Your plan" name="people" defaultValue="Individual">
+  const [selectedDS, setSelectedDS] = useState(null);
+  const [selectedOperation, setSelectedOperation] = useState(null);
+
+  const handleDSSelect = (ds) => {
+    setSelectedDS(ds);
+    setSelectedOperation(null);
+  };
+
+  const handleOperationSelect = (operation) => {
+    setSelectedOperation(operation);
+  };
+
+  const renderButtons = (items, onSelect, selected) => (
+    <RadioGroup 
+      aria-label="Selection" 
+      name="selection" 
+      value={selected || ''}
+      onChange={(e) => onSelect(e.target.value)}
+    >
       <List
         sx={{
           minWidth: 240,
           '--List-gap': '0.5rem',
           '--ListItem-paddingY': '1rem',
           '--ListItem-radius': '8px',
-          '--ListItemDecorator-size': '32px',
         }}
       >
-        {['Array/String', 'Graph', 'Tree', 'Linked List'].map((item, index) => (
+        {Object.keys(items).map((item) => (
           <ListItem variant="outlined" key={item} sx={{ boxShadow: 'sm' }}>
-            {/* <ListItemDecorator>
-              {[<Person />, <People />, <Apartment />][index]}
-            </ListItemDecorator> */}
             <Radio
               overlay
               value={item}
@@ -46,5 +58,20 @@ export default function DSAselect() {
         ))}
       </List>
     </RadioGroup>
+  );
+
+  return (
+    <div>
+      {!selectedDS && renderButtons(dsaData, handleDSSelect, selectedDS)}
+      {selectedDS && !selectedOperation && renderButtons(dsaData[selectedDS], handleOperationSelect, selectedOperation)}
+      {selectedOperation && (
+        <div>
+          <h3>Selected Approach:</h3>
+          <p>{dsaData[selectedDS][selectedOperation]}</p>
+          <Button onClick={() => setSelectedOperation(null)}>Back to Operations</Button>
+        </div>
+      )}
+      {selectedDS && <Button onClick={() => setSelectedDS(null)}>Back to Data Structures</Button>}
+    </div>
   );
 }
