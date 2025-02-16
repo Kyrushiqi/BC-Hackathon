@@ -6,26 +6,34 @@ import RadioGroup from '@mui/joy/RadioGroup';
 import Button from '@mui/joy/Button';
 import dsaData from './DSAtree.json';
 
-
 export default function DSAselect() {
-  const [selectedDS, setSelectedDS] = useState(null);
-  const [selectedOperation, setSelectedOperation] = useState(null);
+  const [selectionPath, setSelectionPath] = useState([]);
 
-  const handleDSSelect = (ds) => {
-    setSelectedDS(ds);
-    setSelectedOperation(null);
+  const handleSelect = (selection) => {
+    setSelectionPath([...selectionPath, selection]);
   };
 
-  const handleOperationSelect = (operation) => {
-    setSelectedOperation(operation);
+  const handleBack = () => {
+    setSelectionPath(selectionPath.slice(0, -1));
   };
 
-  const renderButtons = (items, onSelect, selected) => (
-    <RadioGroup 
-      aria-label="Selection" 
-      name="selection" 
-      value={selected || ''}
-      onChange={(e) => onSelect(e.target.value)}
+  const handleBackToDataStructures = () => {
+    setSelectionPath([]);
+  };
+
+  const getCurrentLevel = () => {
+    let current = dsaData;
+    for (let selection of selectionPath) {
+      current = current[selection];
+    }
+    return current;
+  };
+
+  const renderButtons = (items) => (
+    <RadioGroup
+      aria-label="Selection"
+      name="selection"
+      onChange={(e) => handleSelect(e.target.value)}
     >
       <List
         sx={{
@@ -36,22 +44,29 @@ export default function DSAselect() {
         }}
       >
         {Object.keys(items).map((item) => (
-          <ListItem variant="outlined" key={item} sx={{ boxShadow: 'sm' }}>
+          <ListItem 
+            key={item} 
+            sx={{ 
+              p: 0,
+            //   '&:hover': {
+            //     backgroundColor: 'primary.100',
+            //     '& .MuiRadio-action': {
+            //       borderColor: 'primary.500',
+            //     },
+            //   },
+            }}
+          >
             <Radio
-              overlay
-              value={item}
               label={item}
-              sx={{ flexGrow: 1, flexDirection: 'row-reverse' }}
-              slotProps={{
-                action: ({ checked }) => ({
-                  sx: (theme) => ({
-                    ...(checked && {
-                      inset: -1,
-                      border: '2px solid',
-                      borderColor: theme.vars.palette.primary[500],
-                    }),
-                  }),
-                }),
+              value={item}
+              overlay
+              disableIcon
+              variant="outlined"
+              sx={{
+                flexGrow: 1,
+                '& .MuiRadio-action': {
+                  borderWidth: 1,
+                },
               }}
             />
           </ListItem>
@@ -59,19 +74,40 @@ export default function DSAselect() {
       </List>
     </RadioGroup>
   );
+  
+
+  const currentLevel = getCurrentLevel();
 
   return (
     <div>
-      {!selectedDS && renderButtons(dsaData, handleDSSelect, selectedDS)}
-      {selectedDS && !selectedOperation && renderButtons(dsaData[selectedDS], handleOperationSelect, selectedOperation)}
-      {selectedOperation && (
+      {typeof currentLevel === 'object' && renderButtons(currentLevel)}
+      {typeof currentLevel !== 'object' && (
         <div>
           <h3>Selected Approach:</h3>
-          <p>{dsaData[selectedDS][selectedOperation]}</p>
-          <Button onClick={() => setSelectedOperation(null)}>Back to Operations</Button>
+          <p>{Array.isArray(currentLevel) ? currentLevel.join(', ') : currentLevel}</p>
         </div>
       )}
-      {selectedDS && <Button onClick={() => setSelectedDS(null)}>Back to Data Structures</Button>}
+      <div style={{ marginTop: '20px' }}>
+        {selectionPath.length > 0 && (
+          <Button onClick={handleBack} 
+                sx={{     
+                    marginRight: '10px',
+                    backgroundColor:"#ec9daf",
+                }}  
+            >
+                Back
+            </Button>
+        )}
+        {selectionPath.length > 0 && (
+            <Button onClick={handleBackToDataStructures}
+                sx={{
+                    backgroundColor:"#ec9daf",
+                }}    
+            >
+                Back to Data Structures
+            </Button>
+        )}
+      </div>
     </div>
   );
 }

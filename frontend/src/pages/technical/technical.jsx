@@ -1,19 +1,16 @@
 import VideoResources from "../../pages/technical/VideoResources";
+import DSAselect from "./DSAselect"; 
+import './technical.css'
+
 
 function Technical() {
   return (
-    <div>
-      Technical Mode!!!
-      <VideoResources></VideoResources>
+    <div className="technical">
+      {/* <VideoResources></VideoResources> */}
+      <DSAselect />
+
     </div>
   )
-// import DSAselect from "./DSAselect"; 
-
-// function Technical() {
-//   return <>
-//     <div>Hello from technical!</div>
-//     <DSAselect />
-//   </>
-
+}
 
 export default Technical;
