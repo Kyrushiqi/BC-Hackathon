@@ -1,6 +1,7 @@
+import Header from "../../components/behavioral/header";
 import VideoResources from "../../pages/technical/VideoResources";
-import DSAselect from "./DSAselect"; 
-import './technical.css'
+import DSAselect from "./DSAselect";
+import "./technical.css";
 
 function Technical() {
   const videos = [
@@ -80,18 +81,21 @@ function Technical() {
 
   return (
     <div className="technical">
+      <Header subtitle="Technical Interview Road Map" />
       <DSAselect />
 
-      <h2><u>Video Resources</u></h2>
+      <h2>
+        <u>Video Resources</u>
+      </h2>
       <div id="video-container">
         {videos.map((video, index) => (
-        <VideoResources
-          key={index}
-          videoUrl={video.videoUrl}
-          thumbnailUrl={video.thumbnailUrl}
-          title={video.title}
-        />
-      ))}
+          <VideoResources
+            key={index}
+            videoUrl={video.videoUrl}
+            thumbnailUrl={video.thumbnailUrl}
+            title={video.title}
+          />
+        ))}
       </div>
     </div>
   );

@@ -1,10 +1,10 @@
 import "./header.css";
 
-function Header() {
+function Header(props) {
   return (
     <div className="header">
       <h2>TechBerry</h2>
-      <h3>Daily Behavioral Challenge</h3>
+      <h3>{props.subtitle}</h3>
     </div>
   );
 }

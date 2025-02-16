@@ -1,13 +1,14 @@
 .header {
   background-color: #ec9daf;
   width: 95%;
-  /* height: 10%; */
+  height: 10%;
   position: fixed;
   right: 0;
   top: 0;
   /* padding: 16px 0; */
   text-align: center;
   overflow: hidden;
+  z-index: 777;
 }
 
 .header h2 {
@@ -31,4 +32,10 @@
   cursor: pointer;
   display: none;
   transform: translateY(-50%);
+}
+
+@media only screen and (max-width: 500px) {
+  .header {
+    height: 100px;
+  }
 }

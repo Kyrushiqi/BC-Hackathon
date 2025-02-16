@@ -33,3 +33,6 @@
     margin-right: 10px;
   }
    */
+.btn:hover {
+  background-color: #d48d9d;
+}

@@ -2,7 +2,7 @@
   height: 100%;
   width: 125px;
   position: fixed;
-  z-index: 1;
+  z-index: 999;
   top: 0;
   left: 0;
   background-color: #ec9daf;
@@ -18,8 +18,8 @@
 }
 
 .sidebar img:hover {
-    background-color: #a7dba3;
-
+  background-color: #a7dba3;
+}
 
 .iconContainer {
   margin: 100;
@@ -47,7 +47,6 @@
 .home {
   background-color: #ec9daf;
 }
-
 
 @media only screen and (max-width: 500px) {
   .sidebar {
