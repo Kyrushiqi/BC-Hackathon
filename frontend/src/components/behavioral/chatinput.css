@@ -1,0 +1,35 @@
+.chatinput {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 98.5%;
+  display: flex;
+  gap: 5px;
+  background-color: #fff;
+  padding: 5px 20px;
+  border-top: 1px solid #ccc;
+}
+
+.chatinput textarea {
+  height: 55px;
+  width: 95%;
+  border: none;
+  outline: none;
+  font-size: 0.95rem;
+  resize: none;
+  padding: 15px 15px 15px 0;
+  margin-left: 10px;
+}
+
+.chatinput span {
+  align-self: flex-end;
+  height: 47.5px;
+  color: lightcoral;
+  font-size: 2.5rem;
+  cursor: pointer;
+  visibility: hidden;
+}
+
+.chatinput textarea:valid ~ span {
+  visibility: visible;
+}

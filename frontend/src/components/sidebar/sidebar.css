@@ -10,7 +10,7 @@
 }
 
 .sidebar img {
-  max-height: 75px;
+  max-height: 55px;
   cursor: pointer;
   background-color: #ccdccb;
   border-radius: 10px;
@@ -19,7 +19,7 @@
 
 .sidebar img:hover {
     background-color: #a7dba3;
-}
+
 
 .iconContainer {
   margin: 100;
@@ -46,4 +46,20 @@
 
 .home {
   background-color: #ec9daf;
+}
+
+
+@media only screen and (max-width: 500px) {
+  .sidebar {
+    width: 75px;
+  }
+
+  .sidebar img {
+    max-height: 35px;
+  }
+
+  .iconContainer img {
+    max-height: 30px;
+    margin-bottom: 30px;
+  }
 }

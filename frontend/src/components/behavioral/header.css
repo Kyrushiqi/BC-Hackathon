@@ -1,0 +1,34 @@
+.header {
+  background-color: #ec9daf;
+  width: 95%;
+  /* height: 10%; */
+  position: fixed;
+  right: 0;
+  top: 0;
+  /* padding: 16px 0; */
+  text-align: center;
+  overflow: hidden;
+}
+
+.header h2 {
+  color: #ffcfd7;
+  font-size: 1.4rem;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+.header h3 {
+  color: #f6dddd;
+  margin-top: 0px;
+  padding-top: 0px;
+}
+
+.header span {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  color: white;
+  cursor: pointer;
+  display: none;
+  transform: translateY(-50%);
+}

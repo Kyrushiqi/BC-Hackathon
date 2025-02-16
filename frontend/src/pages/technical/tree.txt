@@ -1,0 +1,8 @@
+tree structure:
+
+                    linked list  
+            /                            \            
+    detecting cycles                    Reversing/Modification
+        /                           /                                \
+Fast and slow pointers      Reversing: "Previous" pointer       Maintaining origional head: "Temp" pointer
+

@@ -1,0 +1,21 @@
+.chatbot {
+  position: absolute;
+  width: 95%;
+  left: 5%;
+  background-color: #fff;
+  margin: 25px;
+}
+
+.container {
+  bottom: 0;
+  left: 0;
+}
+
+@media only screen and (max-width: 500px) {
+  .chatbot {
+    position: absolute;
+    width: 425px;
+    left: 7.5%;
+    background-color: #fff;
+  }
+}
