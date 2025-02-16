@@ -8,6 +8,8 @@ import Behavioral from "./pages/behavioral/behavioral.jsx";
 function App() {
   return (
     <div>
+      <h1 id="title">Interview Prep AI</h1>
+
       <Sidebar />
       <Routes>
         <Route exact path="/" element={<Home />} />
