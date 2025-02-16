@@ -5,25 +5,60 @@
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #f6dddd;
+  background-color: #ec9daf;
   padding-top: 20px;
 }
 
 .sidebar img {
-  max-height: 75px;
+  max-height: 55px;
   cursor: pointer;
+  background-color: #ccdccb;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.sidebar img:hover {
+  background-color: #a7dba3;
 }
 
 .iconContainer {
-  margin: 0;
+  margin: 100;
   position: absolute;
-  top: 50%;
+  top: 44%;
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  background-color: #ec9daf;
 }
 
 .iconContainer img {
   max-height: 50px;
   margin-bottom: 30px;
+}
+
+.tLink {
+  background-color: #ec9daf;
+}
+
+.bLink {
+  background-color: #ec9daf;
+}
+
+.home {
+  background-color: #ec9daf;
+}
+
+@media only screen and (max-width: 500px) {
+  .sidebar {
+    width: 75px;
+  }
+
+  .sidebar img {
+    max-height: 35px;
+  }
+
+  .iconContainer img {
+    max-height: 30px;
+    margin-bottom: 30px;
+  }
 }
