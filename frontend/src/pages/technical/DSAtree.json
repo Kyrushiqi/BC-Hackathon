@@ -1,0 +1,7 @@
+{
+    "Linked List": {
+        "Detecting cycles": "Fast and slow pointers",
+        "Reversing": "Use a \"Previous\" pointer",
+        "Modification": "Maintain origional head using a \"temp\" head"
+    }
+}
