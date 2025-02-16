@@ -1,5 +1,12 @@
+import VideoResources from "../../pages/technical/VideoResources";
+
 function Technical() {
-  return <div>Hello from technical!</div>;
+  return (
+    <div>
+      Technical Mode!!!
+      <VideoResources></VideoResources>
+    </div>
+  )
 }
 
 export default Technical;

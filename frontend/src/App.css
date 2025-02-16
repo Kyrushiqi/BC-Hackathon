@@ -1,7 +1,15 @@
 #root {
-  height: 500px;
+  height: 800px;
   width: 500px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+}
+
+#title {
+  color: #ec9daf;
+}
+
+* {
+  background-color: #f6dddd;
 }
